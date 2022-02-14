@@ -5,37 +5,37 @@
  / \                                                                        \
 |   |split.cpp                                                              |
  \_ | Accepts input as first param and splits the content based on the      |
-	|the second param. If no second param is supplied then it will split on |
-	|any whitespace character.                                              |
-	|              This function is overloaded to be more functional, which |
-	|means there is quite a bit of code duplication.   						|
-	|				                                                        |
-	|@params:                                                               |
-	| (std::string)															|
-	| (std::istringstream&)													|
-	| (std::string, char)                                                   |
-	| (std::istringstream&, char)                                           |
-	| (std::string, char[])                                                 |
-	| (std::istringstream&, char[])                                         |
-	| (std::string, std::vector<char>)                                      |
-	| (std::istringstream&, std::vector<char>)                              |
-	| (std::string, std::string)                                            |
-	| (std::istringstream&, std::string)                                    |
-	| (std::string, std::string[])											|
-	| (std::istringstream&, std::string[])									|
-	| (std::string, std::vector<std::string>)								|
-	| (std::istringstream&, std::vector<std::string>)						|
-	| (std::string, std::function<bool(char)>)                              |
-	| (std::istringstream&, std::function<bool(char)>)                      |
-	| (std::string, std::regex)												|
-	| (std::istringstream&, std::regex)                                     |
-	|                                                                       |
-	|@returns:                                                              |
-	| std::vector<std::string>                                              |
-	|http://websites.umich.edu/~eecs381/handouts/filestreams.pdf            |
-	|    ___________________________________________________________________|___
-	|   /                                                                      /
-	 \_/______________________________________________________________________/
+    |the second param. If no second param is supplied then it will split on |
+    |any whitespace character.                                              |
+    |              This function is overloaded to be more functional, which |
+    |means there is quite a bit of code duplication.			    |
+    |									    |
+    |@params:                                                               |
+    | (std::string)							    |
+    | (std::istringstream&)						    |
+    | (std::string, char)                                                   |
+    | (std::istringstream&, char)                                           |
+    | (std::string, char[])                                                 |
+    | (std::istringstream&, char[])                                         |
+    | (std::string, std::vector<char>)                                      |
+    | (std::istringstream&, std::vector<char>)                              |
+    | (std::string, std::string)                                            |
+    | (std::istringstream&, std::string)                                    |
+    | (std::string, std::string[])					    |
+    | (std::istringstream&, std::string[				    |
+    | (std::string, std::vector<std::string>)				    |
+    | (std::istringstream&, std::vector<std::string>)			    |
+    | (std::string, std::function<bool(char)>)                              |
+    | (std::istringstream&, std::function<bool(char)>)                      |
+    | (std::string, std::regex)						    |
+    | (std::istringstream&, std::regex)                                     |
+    |                                                                       |
+    |@returns:                                                              |
+    | std::vector<std::string>                                              |
+    |http://websites.umich.edu/~eecs381/handouts/filestreams.pdf            |
+    |    ___________________________________________________________________|___
+    |   /                                                                      /
+     \_/______________________________________________________________________/
 
 //Interesting article about having to convert std::istringstream& to std::string
 //http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0757r0.html
