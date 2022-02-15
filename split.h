@@ -9,46 +9,46 @@
 #include <functional>
 using CharacterComparator = std::function<bool(char)>;
 
-std::vector<std::string> split(std::string);
+std::vector<std::string> Split(std::string);
 
-std::vector<std::string> split(std::istringstream&);
+std::vector<std::string> Split(std::istringstream&);
 
-std::vector<std::string> split(std::string, char);
+std::vector<std::string> Split(std::string, char);
 
-std::vector<std::string> split(std::istringstream&, char);
+std::vector<std::string> Split(std::istringstream&, char);
 
-std::vector<std::string> split(std::string, char[]);
+std::vector<std::string> Split(std::string, char[]);
 
-std::vector<std::string> split(std::istringstream&, char[]);
+std::vector<std::string> Split(std::istringstream&, char[]);
 
-std::vector<std::string> split(std::string, std::vector<char>);
+std::vector<std::string> Split(std::string, std::vector<char>);
 
-std::vector<std::string> split(std::istringstream&, std::vector<char>);
+std::vector<std::string> Split(std::istringstream&, std::vector<char>);
 
-std::vector<std::string> split(std::string, std::string);
+std::vector<std::string> Split(std::string, std::string);
 
-std::vector<std::string> split(std::istringstream&, std::string);
+std::vector<std::string> Split(std::istringstream&, std::string);
 
-std::vector<std::string> split(std::string, std::string[]);
+std::vector<std::string> Split(std::string, std::string[]);
 
-std::vector<std::string> split(std::istringstream&, std::string[]);
+std::vector<std::string> Split(std::istringstream&, std::string[]);
 
-std::vector<std::string> split(std::string, std::vector<std::string>);
+std::vector<std::string> Split(std::string, std::vector<std::string>);
 
-std::vector<std::string> split(std::istringstream&, std::vector<std::string>);
+std::vector<std::string> Split(std::istringstream&, std::vector<std::string>);
 
-std::vector<std::string> split(std::string, CharacterComparator);
+std::vector<std::string> Split(std::string, CharacterComparator);
 
-std::vector<std::string> split(std::istringstream&, CharacterComparator);
+std::vector<std::string> Split(std::istringstream&, CharacterComparator);
 
-std::vector<std::string> split(std::string, std::regex);
+std::vector<std::string> Split(std::string, std::regex);
 
-std::vector<std::string> split(std::istringstream&, std::regex);
+std::vector<std::string> Split(std::istringstream&, std::regex);
 
 
 template <class T>
-std::vector<T> split(std::string str) {
-	std::vector<std::string> str_vec = split(str);
+std::vector<T> Split(std::string str) {
+	std::vector<std::string> str_vec = Split(str);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -64,8 +64,8 @@ std::vector<T> split(std::string str) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::istringstream& iss) {
-	std::vector<std::string> str_vec = split(iss);
+std::vector<T> Split(std::istringstream& iss) {
+	std::vector<std::string> str_vec = Split(iss);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -81,8 +81,8 @@ std::vector<T> split(std::istringstream& iss) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::string str, char del) {
-	std::vector<std::string> str_vec = split(str, del);
+std::vector<T> Split(std::string str, char del) {
+	std::vector<std::string> str_vec = Split(str, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -98,8 +98,8 @@ std::vector<T> split(std::string str, char del) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::istringstream& iss, char del) {
-	std::vector<std::string> str_vec = split(iss, del);
+std::vector<T> Split(std::istringstream& iss, char del) {
+	std::vector<std::string> str_vec = Split(iss, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -115,8 +115,8 @@ std::vector<T> split(std::istringstream& iss, char del) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::string str, char del[]) {
-	std::vector<std::string> str_vec = split(str, del);
+std::vector<T> Split(std::string str, char del[]) {
+	std::vector<std::string> str_vec = Split(str, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -132,8 +132,8 @@ std::vector<T> split(std::string str, char del[]) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::istringstream& iss, char del[]) {
-	std::vector<std::string> str_vec = split(iss, del);
+std::vector<T> Split(std::istringstream& iss, char del[]) {
+	std::vector<std::string> str_vec = Split(iss, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -150,8 +150,8 @@ std::vector<T> split(std::istringstream& iss, char del[]) {
 
 }
 template <class T>
-std::vector<T> split(std::string str, std::vector<char> del) {
-	std::vector<std::string> str_vec = split(str, del);
+std::vector<T> Split(std::string str, std::vector<char> del) {
+	std::vector<std::string> str_vec = Split(str, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -167,8 +167,8 @@ std::vector<T> split(std::string str, std::vector<char> del) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::istringstream& iss, std::vector<char> del) {
-	std::vector<std::string> str_vec = split(iss, del);
+std::vector<T> Split(std::istringstream& iss, std::vector<char> del) {
+	std::vector<std::string> str_vec = Split(iss, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -184,8 +184,8 @@ std::vector<T> split(std::istringstream& iss, std::vector<char> del) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::string str, std::string del) {
-	std::vector<std::string> str_vec = split(str, del);
+std::vector<T> Split(std::string str, std::string del) {
+	std::vector<std::string> str_vec = Split(str, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -201,8 +201,8 @@ std::vector<T> split(std::string str, std::string del) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::istringstream& iss, std::string del) {
-	std::vector<std::string> str_vec = split(iss, del);
+std::vector<T> Split(std::istringstream& iss, std::string del) {
+	std::vector<std::string> str_vec = Split(iss, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -218,8 +218,8 @@ std::vector<T> split(std::istringstream& iss, std::string del) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::string str, std::string del[]) {
-	std::vector<std::string> str_vec = split(str, del);
+std::vector<T> Split(std::string str, std::string del[]) {
+	std::vector<std::string> str_vec = Split(str, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -235,8 +235,8 @@ std::vector<T> split(std::string str, std::string del[]) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::istringstream& iss, std::string del[]) {
-	std::vector<std::string> str_vec = split(iss, del);
+std::vector<T> Split(std::istringstream& iss, std::string del[]) {
+	std::vector<std::string> str_vec = Split(iss, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -252,8 +252,8 @@ std::vector<T> split(std::istringstream& iss, std::string del[]) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::string str, std::vector<T> del) {
-	std::vector<std::string> str_vec = split(str, del);
+std::vector<T> Split(std::string str, std::vector<T> del) {
+	std::vector<std::string> str_vec = Split(str, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;
@@ -269,8 +269,8 @@ std::vector<T> split(std::string str, std::vector<T> del) {
 	return vec;
 }
 template <class T>
-std::vector<T> split(std::istringstream& iss, std::vector<std::string> del) {
-	std::vector<std::string> str_vec = split(iss, del);
+std::vector<T> Split(std::istringstream& iss, std::vector<std::string> del) {
+	std::vector<std::string> str_vec = Split(iss, del);
 	T tmp;
 	std::vector<T> vec;
 	std::istringstream ss;

@@ -3,7 +3,7 @@
 /*
    _________________________________________________________________________
  / \                                                                        \
-|   |split.cpp                                                              |
+|   |Split.cpp                                                              |
  \_ | Accepts input as first param and splits the content based on the      |
     |the second param. If no second param is supplied then it will split on |
     |any whitespace character.                                              |
@@ -45,11 +45,11 @@
 .   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.
  \_//-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\
 
- split()
+ Split()
  @params: std::string str
  @returns: std::vector<std::string>
 
- split()
+ Split()
  @params: std::istringstream& str
  @returns: std::vector<std::string>
 
@@ -61,32 +61,32 @@
 */
 
 #pragma once
-#include "split.h"
+#include "Split.h"
 
-std::vector<std::string> split(std::string str)
+std::vector<std::string> Split(std::string str)
 {
 	//Split on whitespace character
-	return split(str, isspace);
+	return Split(str, isspace);
 }
 
 
-std::vector<std::string> split(std::istringstream& iss)
+std::vector<std::string> Split(std::istringstream& iss)
 {
 	std::string str = iss.str();
 
 	//Split on whitespace character
-	return split(str, isspace);
+	return Split(str, isspace);
 }
 
 /*
 .   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.
  \_//-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\
 
- split()
+ Split()
  @params: std::string, char
  @returns: std::vector<std::string>
 
- split()
+ Split()
  @params: std::istringstream&, char
  @returns: std::vector<std::string>
 
@@ -99,7 +99,7 @@ std::vector<std::string> split(std::istringstream& iss)
 */
 
 //Processed using std::find
-std::vector<std::string> split(std::string str, char del)
+std::vector<std::string> Split(std::string str, char del)
 {
 	std::vector<std::string> vec;
 
@@ -111,7 +111,7 @@ std::vector<std::string> split(std::string str, char del)
 	if (del == 0)
 	{
 		//Split on whitespace character
-		return split(str, isspace);
+		return Split(str, isspace);
 	}
 
 	std::size_t str_length = str.length();
@@ -139,7 +139,7 @@ std::vector<std::string> split(std::string str, char del)
 }
 
 //Processed using std::getline
-std::vector<std::string> split(std::istringstream& iss, char del)
+std::vector<std::string> Split(std::istringstream& iss, char del)
 {
 	std::vector<std::string> vec;
 	if (!iss.good())
@@ -150,7 +150,7 @@ std::vector<std::string> split(std::istringstream& iss, char del)
 	if (del == 0)
 	{
 		//Split on whitespace character
-		return split(iss, isspace);
+		return Split(iss, isspace);
 	}
 
 	std::string str_cache;
@@ -168,11 +168,11 @@ std::vector<std::string> split(std::istringstream& iss, char del)
 .   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.
  \_//-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\
 
- split()
+ Split()
  @params: std::string, std::vector<char>
  @returns: std::vector<std::string>
 
- split()
+ Split()
  @params: std::istringstream&, char[]
  @returns: std::vector<std::string>
 
@@ -183,7 +183,7 @@ std::vector<std::string> split(std::istringstream& iss, char del)
 //-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//
 */
 
-std::vector<std::string> split(std::string str, std::vector<char> del)
+std::vector<std::string> Split(std::string str, std::vector<char> del)
 {
 	std::vector<std::string> vec;
 
@@ -195,7 +195,7 @@ std::vector<std::string> split(std::string str, std::vector<char> del)
 	if (del.empty())
 	{
 		//Split on whitespace character
-		return split(str, isspace);
+		return Split(str, isspace);
 	}
 
 	std::size_t str_length = str.length();
@@ -241,7 +241,7 @@ std::vector<std::string> split(std::string str, std::vector<char> del)
 	return vec;
 }
 
-std::vector<std::string> split(std::string str, char del[])
+std::vector<std::string> Split(std::string str, char del[])
 {
 	std::vector<std::string> vec;
 
@@ -253,7 +253,7 @@ std::vector<std::string> split(std::string str, char del[])
 	if (del == 0)
 	{
 		//Split on whitespace character
-		return split(str, isspace);
+		return Split(str, isspace);
 	}
 
 	std::size_t str_length = str.length();
@@ -299,10 +299,10 @@ std::vector<std::string> split(std::string str, char del[])
 	return vec;
 }
 
-std::vector<std::string> split(std::istringstream& iss, char del[])
+std::vector<std::string> Split(std::istringstream& iss, char del[])
 {
 	std::string str = iss.str();
-	return split(str, del);
+	return Split(str, del);
 }
 
 
@@ -311,11 +311,11 @@ std::vector<std::string> split(std::istringstream& iss, char del[])
 .   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.
  \_//-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\
 
- split()
+ Split()
  @params: std::string, std::string
  @returns: std::vector<std::string>
 
- split()
+ Split()
  @params: std::istringstream&, std::string
  @returns: std::vector<std::string>
 
@@ -326,7 +326,7 @@ std::vector<std::string> split(std::istringstream& iss, char del[])
 //-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//
 */
 
-std::vector<std::string> split(std::string str, std::string del)
+std::vector<std::string> Split(std::string str, std::string del)
 {
 	std::vector<std::string> vec;
 
@@ -338,7 +338,7 @@ std::vector<std::string> split(std::string str, std::string del)
 	if (del.empty())
 	{
 		//Split on whitespace character
-		return split(str, isspace);
+		return Split(str, isspace);
 	}
 
 	std::size_t str_length = str.length();
@@ -366,7 +366,7 @@ std::vector<std::string> split(std::string str, std::string del)
 	return vec;
 }
 
-std::vector<std::string> split(std::istringstream& iss, std::string del)
+std::vector<std::string> Split(std::istringstream& iss, std::string del)
 {
 	std::vector<std::string> vec;
 	std::string str = iss.str();
@@ -379,14 +379,14 @@ std::vector<std::string> split(std::istringstream& iss, std::string del)
 	if (del.empty())
 	{
 		//Split on whitespace character
-		return split(str, isspace);
+		return Split(str, isspace);
 	}
 
 	std::size_t del_length = del.length();
 
 	if (del_length == 1)
 	{
-		return split(iss, del[0]);
+		return Split(iss, del[0]);
 	}
 
 	std::size_t str_length = str.length();
@@ -418,11 +418,11 @@ std::vector<std::string> split(std::istringstream& iss, std::string del)
 .   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.
  \_//-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\
 
- split()
+ Split()
  @params: std::string, std::string[]
  @returns: std::vector<std::string>
 
- split()
+ Split()
  @params: std::istringstream&, std::string[]
  @returns: std::vector<std::string>
 
@@ -433,7 +433,7 @@ std::vector<std::string> split(std::istringstream& iss, std::string del)
 //-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//
 */
 
-std::vector<std::string> split(std::string str, std::string del[])
+std::vector<std::string> Split(std::string str, std::string del[])
 {
 	std::vector<std::string> vec;
 
@@ -445,7 +445,7 @@ std::vector<std::string> split(std::string str, std::string del[])
 	if (del == 0)
 	{
 		//Split on whitespace character
-		return split(str, isspace);
+		return Split(str, isspace);
 	}
 
 	std::size_t str_length = str.length();
@@ -504,11 +504,11 @@ std::vector<std::string> split(std::string str, std::string del[])
 .   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.
  \_//-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\
 
- split()
+ Split()
  @params: std::string, std::vector<std::string>
  @returns: std::vector<std::string>
 
- split()
+ Split()
  @params: std::istringstream&, std::vector<std::string>
  @returns: std::vector<std::string>
 
@@ -519,7 +519,7 @@ std::vector<std::string> split(std::string str, std::string del[])
 //-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//
 */
 
-std::vector<std::string> split(std::string str, std::vector<std::string> del)
+std::vector<std::string> Split(std::string str, std::vector<std::string> del)
 {
 	std::vector<std::string> vec;
 
@@ -531,7 +531,7 @@ std::vector<std::string> split(std::string str, std::vector<std::string> del)
 	if (del.empty())
 	{
 		//Split on whitespace character
-		return split(str, isspace);
+		return Split(str, isspace);
 	}
 
 	std::size_t str_length = str.length();
@@ -588,11 +588,11 @@ std::vector<std::string> split(std::string str, std::vector<std::string> del)
 /*
 .   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.
  \_//-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\
- split()
+ Split()
  @params: std::string, std::function<bool(char)>
  @returns: std::vector<std::string>
 
- split()
+ Split()
  @params: std::istringstream&, std::function<bool(char)>
  @returns: std::vector<std::string>
 
@@ -604,7 +604,7 @@ std::vector<std::string> split(std::string str, std::vector<std::string> del)
 //-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//
 */
 
-std::vector<std::string> split(std::string str, CharacterComparator fn)
+std::vector<std::string> Split(std::string str, CharacterComparator fn)
 {
 	std::vector<std::string> vec;
 
@@ -647,21 +647,21 @@ std::vector<std::string> split(std::string str, CharacterComparator fn)
 	return vec;
 }
 
-std::vector<std::string> split(std::istringstream& iss, CharacterComparator fn)
+std::vector<std::string> Split(std::istringstream& iss, CharacterComparator fn)
 {
 	std::string str = iss.str();
 
-	return split(str, fn);
+	return Split(str, fn);
 }
 
 /*
 .   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.
  \_//-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\
- split()
+ Split()
  @params: std::string, std::regex
  @returns: std::vector<std::string>
 
- split()
+ Split()
  @params: std::istringstream&, std::regex
  @returns: std::vector<std::string>
 
@@ -671,23 +671,23 @@ std::vector<std::string> split(std::istringstream& iss, CharacterComparator fn)
  .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .
 //-\\_//-\\_//-\\_//-\\_//-\\_// \\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//-\\_//
 */
-std::vector<std::string> split(std::string str, std::regex e)
+std::vector<std::string> Split(std::string str, std::regex e)
 {
 	std::vector<std::string> vec;
 	if (!str.empty())
 	{
 		//Null set
 		std::sregex_token_iterator rend;
-		//-1 indicates match as splitters
+		//-1 indicates match as Splitters
 		std::sregex_token_iterator d(str.begin(), str.end(), e, -1);
 		while (d != rend) vec.emplace_back(*d++);
 	}
 	return vec;
 }
 
-std::vector<std::string> split(std::istringstream& iss, std::regex e)
+std::vector<std::string> Split(std::istringstream& iss, std::regex e)
 {
 	std::string str = iss.str();
 
-	return split(str, e);
+	return Split(str, e);
 }
