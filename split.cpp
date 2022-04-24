@@ -114,7 +114,7 @@ std::vector<std::string> Split(std::string str, char del)
 		return Split(str, isspace);
 	}
 
-	std::size_t str_length = str.length();
+	const std::size_t str_length = str.length();
 	std::size_t current_pos = 0;
 
 	std::size_t pos = str.find(del);
@@ -198,12 +198,12 @@ std::vector<std::string> Split(std::string str, std::vector<char> del)
 		return Split(str, isspace);
 	}
 
-	std::size_t str_length = str.length();
+	const std::size_t str_length = str.length();
 	std::size_t current_pos = 0;
 	std::size_t pos = 0;
 
 	std::size_t found_first = std::string::npos;
-	std::size_t del_length = 1;
+	const std::size_t del_length = 1;
 
 	for (char s : del)
 	{
@@ -256,41 +256,23 @@ std::vector<std::string> Split(std::string str, char del[])
 		return Split(str, isspace);
 	}
 
-	std::size_t str_length = str.length();
+	const std::size_t str_length = str.length();
+	const std::size_t del_length = strlen(del);
+
 	std::size_t current_pos = 0;
-	std::size_t pos = 0;
+	std::size_t pos = str.find(del);
 
-	std::size_t found_first = std::string::npos;
-	std::size_t del_length = 1;
-
-	for (std::size_t i = 0; i < sizeof(del); ++i)
-	{
-		pos = str.find(del[i]);
-		if (pos < found_first)
-		{
-			found_first = pos;
-		}
-	}
-
-	while (found_first != std::string::npos)
+	while (pos != std::string::npos)
 	{
 		//Catch multiple deliminators in a row
-		if (found_first != current_pos)
-			vec.emplace_back(str.substr(current_pos, found_first - current_pos));
+		if (pos != current_pos)
+			vec.emplace_back(str.substr(current_pos, pos - current_pos));
 
 		//Update current position
-		current_pos = found_first + del_length;
+		current_pos = pos + del_length;
 
 		//Find delimiter from current position
-		found_first = std::string::npos;
-		for (std::size_t i = 0; i < sizeof(del); ++i)
-		{
-			pos = str.find(del[i], current_pos);
-			if (pos < found_first)
-			{
-				found_first = pos;
-			}
-		}
+		pos = str.find(del, current_pos);
 	}
 	//Append remaining string
 	if (current_pos != str_length)
@@ -341,8 +323,8 @@ std::vector<std::string> Split(std::string str, std::string del)
 		return Split(str, isspace);
 	}
 
-	std::size_t str_length = str.length();
-	std::size_t del_length = del.length();
+	const std::size_t str_length = str.length();
+	const std::size_t del_length = del.length();
 
 	std::size_t current_pos = 0;
 	std::size_t pos = str.find(del);
@@ -382,14 +364,14 @@ std::vector<std::string> Split(std::istringstream& iss, std::string del)
 		return Split(str, isspace);
 	}
 
-	std::size_t del_length = del.length();
+	const std::size_t del_length = del.length();
 
 	if (del_length == 1)
 	{
 		return Split(iss, del[0]);
 	}
 
-	std::size_t str_length = str.length();
+	const std::size_t str_length = str.length();
 
 	std::size_t current_pos = 0;
 	std::size_t pos = str.find(del);
@@ -448,7 +430,7 @@ std::vector<std::string> Split(std::string str, std::string del[])
 		return Split(str, isspace);
 	}
 
-	std::size_t str_length = str.length();
+	const std::size_t str_length = str.length();
 	std::size_t current_pos = 0;
 	std::size_t pos = 0;
 
@@ -534,7 +516,7 @@ std::vector<std::string> Split(std::string str, std::vector<std::string> del)
 		return Split(str, isspace);
 	}
 
-	std::size_t str_length = str.length();
+	const std::size_t str_length = str.length();
 	std::size_t current_pos = 0;
 	std::size_t pos = 0;
 
@@ -613,8 +595,8 @@ std::vector<std::string> Split(std::string str, CharacterComparator fn)
 		return vec;
 	}
 
-	std::size_t str_length = str.length();
-	std::size_t del_length = 1;
+	const std::size_t str_length = str.length();
+	const std::size_t del_length = 1;
 
 	if (str_length == del_length)
 	{
@@ -623,7 +605,7 @@ std::vector<std::string> Split(std::string str, CharacterComparator fn)
 	}
 	else
 	{
-		std::size_t difference_str_del = str_length - del_length;
+		const std::size_t difference_str_del = str_length - del_length;
 		std::size_t current_pos = 0;
 		//Iterate std::string character by character
 		//Use difference to ensure we never read past the end of the string
