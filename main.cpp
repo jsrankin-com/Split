@@ -15,8 +15,8 @@ void PrintVector(std::vector<T>& v)
 int main() 
 {
     std::cout << "Input data:\n";
-    std::string commaData = "12.0,12.5,13.0,13.5,14.0";
-    std::string spaceData = "12.0 12.5 13.0 13.5 14.0";
+    const std::string commaData = "12.0,12.5,13.0,13.5,14.0";
+    const std::string spaceData = "12.0 12.5 13.0 13.5 14.0";
     std::cout << commaData << '\n' << spaceData << std::endl;
 
     std::cout << "Vector<string> data:" << std::endl;
@@ -32,13 +32,22 @@ int main()
     auto spaceNum = Split<double>(spaceData);
     PrintVector(spaceNum);
 
-    std::cout << "Regex matching words beginning with 'sub':" << std::endl;
+    
     std::string s("this subject has a submarine as a subsequence");
+    std::cout << "\nString example: \n\t" << s << std::endl;
+    std::cout << std::endl;
+    std::cout << "Split on 'sub':" << std::endl;
+    auto strExample = Split(s, "sub");
+    std::cout << "\t";
+    PrintVector(strExample);
+    std::cout << std::endl;
+
+    std::cout << "Regex matching words beginning with 'sub':" << std::endl;
     std::regex e("\\b(sub)([^ ]*)");   // matches words beginning by "sub"
     auto regex = Split(s, e);
-    std::cout << s << std::endl;
+    std::cout << "\t";
     PrintVector(regex);
-
+    std::cout << std::endl;
     std::cout << "\nPress ENTER key to continue...";
     std::cin.get();
     std::cout << std::endl;
