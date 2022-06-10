@@ -15,9 +15,10 @@ Jeffrey S. Rankin
 int main()
 {
     std::string s("this subject has a submarine as a subsequence");
+    
     std::cout << "\nString example: \n\t" << s << '\n';
-    std::cout << std::endl;
     std::cout << "Split on 'sub':" << '\n';
+    
     auto strExample = Split(s, "sub");
     
     for (auto it = strExample.cbegin(); it != strExample.cend(); ++it) {
