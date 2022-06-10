@@ -16,7 +16,7 @@ int main()
 {
     std::string s("this subject has a submarine as a subsequence");
     
-    std::cout << "\nString example: \n\t" << s << '\n';
+    std::cout << "String example: \n\t" << s << '\n';
     std::cout << "Split on 'sub':" << '\n';
     
     auto strExample = Split(s, "sub");
