@@ -25,6 +25,7 @@ int main()
         std::cout << *it << '\n';
     }
     
+    std::cout << std::endl;
     return 0;
 }
 ```
